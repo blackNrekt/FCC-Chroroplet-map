@@ -41,7 +41,7 @@ $chart-width: $chart-height * 1.618; /* golden ratio */
   line-height: 1.5;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
   white-space: nowrap;
   max-width: 200px;
   overflow: hidden;
@@ -99,7 +99,7 @@ $chart-width: $chart-height * 1.618; /* golden ratio */
 /* Legend styling */
 #legend {
   position: absolute;
-  top: 25%;
+  top: 45%;
   left: 80%;
   background-color: $background-color;
   color: $foreground-color;

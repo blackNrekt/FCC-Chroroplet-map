@@ -53,13 +53,14 @@ let drawMap = () => {
         .on('mousemove', function(countyDataItem) {
             var mouseX = d3.event.x+75;
             var mouseY = d3.event.y-10;
-            tooltip.style('top', mouseY + 'px').style('left', mouseX + 'px');
+            tooltip.style('top', mouseY + 'px').style('left', mouseX + 'px')
+            tooltip.style('box-shadow', '0 0 10px rgba(0, 0, 0, 0.2)')
         })
 
         .on('mouseover', (countyDataItem) => {
             tooltip.transition()
                 .style('visibility', 'visible')
-                .style('box-shadow', '0 0 10px rgba(0, 0, 0, 0.2)')
+                
                 
             let id = countyDataItem['id']
             let county = educationData.find((item) => {
