@@ -59,6 +59,7 @@ let drawMap = () => {
         .on('mouseover', (countyDataItem) => {
             tooltip.transition()
                 .style('visibility', 'visible')
+                .style('box-shadow', '0 0 10px rgba(0, 0, 0, 0.2)')
                 
             let id = countyDataItem['id']
             let county = educationData.find((item) => {
