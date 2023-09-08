@@ -1,0 +1,138 @@
+/* Global settings for the entire chart */
+$font-family: Arial, sans-serif;
+$background-color: #f7f7f7; /* Lighten the background color to improve contrast */
+$foreground-color: #333; /* Darken the foreground color for better readability */
+$stroke-color: #ccc; /* Soften the stroke color to improve visual harmony */
+$fill-color: #fff;
+$hover-color: #c9d4b9; /* Add a subtle hover effect for interactive elements */
+
+/* Chart dimensions */
+$chart-height: 500px;
+$chart-width: $chart-height * 1.618; /* golden ratio */
+
+/* Title and description styling */
+#title, #description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem; /* Increase font size for better readability */
+  font-weight: bold; /* Add weight to the font for emphasis */
+  color: $foreground-color; /* Use the darker foreground color for the text */
+  margin-bottom: 1rem; /* Add spacing between elements */
+}
+
+/* Counties and states layers */
+.counties, .states {
+  fill: none;
+  stroke: $stroke-color;
+  stroke-width: 1px;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: boundingBox; /* Enable mouse events for the shapes */
+}
+
+/* Tooltip styling */
+/* Tooltip */
+#tooltip {
+  position: absolute;
+  z-index: 10;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  max-width: 200px;
+  overflow: hidden;
+  text-align: center;
+}
+
+#tooltip h2 {
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#tooltip p {
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#tooltip span {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#tooltip.noselect {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#tooltip.noselect h2 {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#tooltip.noselect p {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#tooltip.noselect span {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Legend styling */
+#legend {
+  position: absolute;
+  top: 25%;
+  left: 80%;
+  background-color: $background-color;
+  color: $foreground-color;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 10px rgba($foreground-color, 0.5);
+  z-index: 1;
+  font-size: 1.2rem; /* Increase legend font size for better readability */
+}
+
+/* Media queries for mobile devices */
+@media only screen and (max-width: 1100px) {
+  body {
+    display: block;
+    margin: 0;
+  }
+
+  #map {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #tooltip {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+
+  #legend {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+}
